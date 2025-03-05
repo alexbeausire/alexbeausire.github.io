@@ -4,161 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blueprint Roundabout</title>
-    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <div class="title_container">
-        <h1>Blueprint Roundabout</h1>
-        <p> an oblique strategy for everyday</p>
-         </div>
+            <h1>Blueprint Roundabout</h1>
+            <p>An oblique strategy for everyday</p>
+        </div>
         <div id="phrase-container">
             <p id="phrase"></p>
         </div>
     </div>
 
     <script>
-
         document.addEventListener("DOMContentLoaded", function() {
             // Define your list of phrases
             const phrases = [
-               const phrases = [
-    "Abandon normal instruments", 
-    "Accept advice", 
-    "Accretion", 
-    "A line has two sides", 
-    "Allow an easement (an easement is the abandonment of a stricture)", 
-    "Are there sections? Consider combinations", 
-    "Ask yourself to work against your better judgement", 
-    "Ask your body", 
-    "Assemble some of the objects in a group and treat the group", 
-    "Balance the consistency principle with the inconsistency principle", 
-    "Be dirty", 
-    "Breathe more deeply", 
-    "Bridges -build -burn", 
-    "Cascades", 
-    "Change object roles", 
-    "Change nothing and continue with immaculate consistency", 
-    "Remake it as only a child would", 
-    "Cluster analysis", 
-    "Consider different fading systems", 
-    "Consult other sources -promising -unpromising", 
-    "Convert a melodic element into a rhythmic element", 
-    "Courage!", 
-    "Cut a vital connection", 
-    "Decorate, decorate", 
-    "Define an area as `safe' and use it as an anchor", 
-    "Destroy -nothing -the most important thing", 
-    "Discard an axiom", 
-    "Disconnect from desire", 
-    "Discover the recipes you are using and abandon them", 
-    "Distorting time", 
-    "Do nothing for as long as possible", 
-    "Don't be afraid of things because they're easy to do", 
-    "Don't be frightened of cliches", 
-    "Don't be frightened to display your talents", 
-    "Don't stress one thing more than another", 
-    "Do something boring", 
-    "Do the washing up", 
-    "Start again in reverse", 
-    "Do we need holes?", 
-    "Emphasize differences", 
-    "Emphasize repetitions", 
-    "Emphasize the flaws", 
-    "Faced with a choice, do both", 
-    "Leave nothing empty of something", 
-    "Get your neck massaged", 
-    "What is the best piece of advice you have received? Apply that", 
-    "Give the game away", 
-    "Give way to your worst impulse", 
-    "Go slowly all the way round the outside", 
-    "Honor thy error as a hidden intention", 
-    "How would you have done it?", 
-    "Humanize something free of error", 
-    "Imagine the work as a set of disconnected events", 
-    "Infinitesimal gradations", 
-    "Intentions -credibility of -nobility of -humility of", 
-    "Into the impossible", 
-    "Is it finished?", 
-    "Is there something missing?", 
-    "Work incorrectly", 
-    "Just carry on", 
-    "Look from far away", 
-    "Listen to the quiet voice", 
-    "Look at a very small object, look at its centre", 
-    "Make the least important thing the most important", 
-    "Look at the order in which you do things", 
-    "Look closely at the most embarrassing details and amplify them", 
-    "Lowest common denominator check everything", 
-    "Make a blank valuable by putting it in an exquisite frame", 
-    "Make an exhaustive list of everything you might do and do the last thing on the list", 
-    "Make a sudden, destructive unpredictable action; incorporate", 
-    "Mechanicalize something idiosyncratic", 
-    "Only one element of each kind", 
-    "Overtly resist change", 
-    "Remember those quiet evenings", 
-    "Remove ambiguities and convert to specifics", 
-    "Repetition is a form of change", 
-    "Reverse", 
-    "Short circuit (example: a man eating peas with the idea that they will improve his virility shovels them straight into his lap)", 
-    "Simple subtraction", 
-    "Start the task backwards", 
-    "Spectrum analysis", 
-    "Take a break", 
-    "Take away the elements in order of apparent non-importance", 
-    "Work with your opposite hand", 
-    "The inconsistency principle", 
-    "Tidy up", 
-    "Trust in the you of now", 
-    "Turn it upside down", 
-    "Twist the spine", 
-    "Use an old idea", 
-    "Use an unacceptable color", 
-    "Use unqualified people", 
-    "Water", 
-    "What are you really thinking about just now? Incorporate", 
-    "What is the reality of the situation?", 
-    "What mistakes did you make last time? Emphasize them", 
-    "What would your closest friend do?", 
-    "What wouldn't you do?", 
-    "Work at a different speed", 
-    "You are an engineer", 
-    "You can only make one dot at a time", 
-    "You don't have to be ashamed of using your own ideas", 
-    "Try faking it", 
-    "Imagine a work of art", 
-    "Only a part, not the whole", 
-    "Not building a wall but making a brick", 
-    "Introduce an echo", 
-    "Reject resolution", 
-    "Imagine how it would feel to touch"
-];
+                "Abandon normal instruments",
+                "Accept advice",
+                "Accretion",
+                "A line has two sides",
+                "Allow an easement (an easement is the abandonment of a stricture)",
+                "Are there sections? Consider combinations",
+                "Ask yourself to work against your better judgement",
+                "Ask your body",
+                "Assemble some of the objects in a group and treat the group",
+                "Balance the consistency principle with the inconsistency principle",
+                "Be dirty",
+                "Breathe more deeply",
+                "Bridges -build -burn",
+                "Cascades",
+                "Change object roles",
+                "Change nothing and continue with immaculate consistency",
+                "Remake it as only a child would",
+                "Cluster analysis",
+                "Consider different fading systems",
+                "Consult other sources -promising -unpromising",
+                "Convert a melodic element into a rhythmic element",
+                "Courage!",
+                "Cut a vital connection",
+                "Decorate, decorate",
+                "Define an area as `safe' and use it as an anchor",
+                "Destroy -nothing -the most important thing",
+                "Discard an axiom",
+                "Disconnect from desire",
+                "Discover the recipes you are using and abandon them",
+                "Distorting time",
+                "Do nothing for as long as possible",
+                "Don't be afraid of things because they're easy to do",
+                "Don't be frightened of cliches",
+                "Don't be frightened to display your talents",
+                "Don't stress one thing more than another",
+                "Do something boring",
+                "Do the washing up",
+                "Start again in reverse",
+                "Do we need holes?",
+                "Emphasize differences",
+                "Emphasize repetitions",
+                "Emphasize the flaws",
+                "Faced with a choice, do both",
+                "Leave nothing empty of something",
+                "Get your neck massaged",
+                "What is the best piece of advice you have received? Apply that",
+                "Give the game away",
+                "Give way to your worst impulse",
+                "Go slowly all the way round the outside",
+                "Honor thy error as a hidden intention",
+                "How would you have done it?",
+                "Humanize something free of error",
+                "Imagine the work as a set of disconnected events",
+                "Infinitesimal gradations",
+                "Intentions -credibility of -nobility of -humility of",
+                "Into the impossible",
+                "Is it finished?",
+                "Is there something missing?",
+                "Work incorrectly",
+                "Just carry on",
+                "Look from far away",
+                "Listen to the quiet voice",
+                "Look at a very small object, look at its centre",
+                "Make the least important thing the most important",
+                "Look at the order in which you do things",
+                "Look closely at the most embarrassing details and amplify them",
+                "Lowest common denominator check everything",
+                "Make a blank valuable by putting it in an exquisite frame",
+                "Make an exhaustive list of everything you might do and do the last thing on the list",
+                "Make a sudden, destructive unpredictable action; incorporate",
+                "Mechanicalize something idiosyncratic",
+                "Only one element of each kind",
+                "Overtly resist change",
+                "Remember those quiet evenings",
+                "Remove ambiguities and convert to specifics",
+                "Repetition is a form of change",
+                "Reverse",
+                "Short circuit (example: a man eating peas with the idea that they will improve his virility shovels them straight into his lap)",
+                "Simple subtraction",
+                "Start the task backwards",
+                "Spectrum analysis",
+                "Take a break",
+                "Take away the elements in order of apparent non-importance",
+                "Work with your opposite hand",
+                "The inconsistency principle",
+                "Tidy up",
+                "Trust in the you of now",
+                "Turn it upside down",
+                "Twist the spine",
+                "Use an old idea",
+                "Use an unacceptable color",
+                "Use unqualified people",
+                "Water",
+                "What are you really thinking about just now? Incorporate",
+                "What is the reality of the situation?",
+                "What mistakes did you make last time? Emphasize them",
+                "What would your closest friend do?",
+                "What wouldn't you do?",
+                "Work at a different speed",
+                "You are an engineer",
+                "You can only make one dot at a time",
+                "You don't have to be ashamed of using your own ideas",
+                "Try faking it",
+                "Imagine a work of art",
+                "Only a part, not the whole",
+                "Not building a wall but making a brick",
+                "Introduce an echo",
+                "Reject resolution",
+                "Imagine how it would feel to touch"
+            ];
 
-        
-             // Function to update the phrase
-      function updatePhrase() {
-        const today = new Date();
-        const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
-        const index = dayOfYear % phrases.length;
-        document.getElementById("phrase").textContent = phrases[index];
-      }
+            // Function to update the phrase
+            function updatePhrase() {
+                const today = new Date();
+                const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
+                const index = dayOfYear % phrases.length;
+                document.getElementById("phrase").textContent = phrases[index];
+            }
 
-      // Update the phrase immediately
-      updatePhrase();
+            // Update the phrase immediately
+            updatePhrase();
 
-      // Update the phrase at the start of each day (00:00 local time)
-      setInterval(function() {
-        const currentDate = new Date();
-        if (currentDate.getHours() === 00 && currentDate.getMinutes() === 00 && currentDate.getSeconds() === 0) {
-          updatePhrase();
-        }
-      }, 1000); // Check every second for the start of a new day
-    });
-        
+            // Store the last updated day
+            let lastUpdatedDay = new Date().getDate();
 
-
-
+            // Check every minute for a new day
+            setInterval(function() {
+                const currentDate = new Date();
+                const currentDay = currentDate.getDate();
+                
+                if (currentDay !== lastUpdatedDay) {
+                    updatePhrase();
+                    lastUpdatedDay = currentDay;
+                }
+            }, 60000); // Check every 60 seconds
+        });
     </script>
 </body>
 </html>
