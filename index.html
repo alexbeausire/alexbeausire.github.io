@@ -150,7 +150,7 @@
       // Update the phrase at the start of each day (00:00 local time)
       setInterval(function() {
         const currentDate = new Date();
-        if (currentDate.getHours() === 0 && currentDate.getMinutes() === 0 && currentDate.getSeconds() === 0) {
+        if (currentDate.getHours() === 14 && currentDate.getMinutes() === 30 && currentDate.getSeconds() === 0) {
           updatePhrase();
         }
       }, 1000); // Check every second for the start of a new day
