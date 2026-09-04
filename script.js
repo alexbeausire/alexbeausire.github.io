@@ -116,9 +116,14 @@ document.addEventListener("DOMContentLoaded", function () {
         "You don't have to be ashamed of using your own ideas"
     ];
 
-    // ---- Daily phrase --------------------------------------------------
+    // ---- Grab all DOM elements up front ---------------------------------
     const phraseEl = document.getElementById("phrase");
+    const browseBtn = document.getElementById("browse-btn");
+    const modal = document.getElementById("phrase-modal");
+    const closeBtn = document.getElementById("close-modal");
+    const listEl = document.getElementById("phrase-list");
 
+    // ---- Daily phrase --------------------------------------------------
     function dayIndex() {
         const today = new Date();
         const dayOfYear = Math.floor(
@@ -132,17 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
         highlightCurrentInList();
     }
 
-    updatePhrase();
-
-    // Check once a minute for the new day, rather than every second
-    setInterval(updatePhrase, 60 * 1000);
-
     // ---- Browse-all modal -----------------------------------------------
-    const browseBtn = document.getElementById("browse-btn");
-    const modal = document.getElementById("phrase-modal");
-    const closeBtn = document.getElementById("close-modal");
-    const listEl = document.getElementById("phrase-list");
-
     phrases.forEach((phrase, i) => {
         const li = document.createElement("li");
         li.textContent = phrase;
@@ -188,6 +183,11 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && !modal.classList.contains("hidden")) closeModal();
     });
+
+    // Now that the list and its elements exist, show today's phrase
+    updatePhrase();
+    // Check once a minute for the new day, rather than every second
+    setInterval(updatePhrase, 60 * 1000);
 
     // ---- Background slideshow -------------------------------------------
     const images = [
