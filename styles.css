@@ -1,38 +1,193 @@
+:root {
+    --blueprint-blue: #4a7fb5;
+    --blueprint-blue-bright: #7fb0e0;
+    --overlay-dark: rgba(6, 10, 16, 0.72);
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #000;
-    color: #fff; /* Set text color to white */
+    color: #fff;
+    min-height: 100vh;
+}
+
+/* Background slideshow */
+.bg-slideshow {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.bg-slideshow::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--overlay-dark);
+    z-index: 1;
+}
+
+.bg-layer {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 2.5s ease-in-out;
+}
+
+.bg-layer.active {
+    opacity: 1;
 }
 
 .container {
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
-   
-   
-    text-align: center; /* Center align text container */
+    text-align: center;
+    position: relative;
+    z-index: 1;
 }
-
-
 
 h1 {
     text-align: center;
-    color: #fff; /* Set heading color to white */
+    color: #fff;
+}
+
+.title_container p {
+    color: rgba(255, 255, 255, 0.75);
 }
 
 #phrase-container {
     text-align: center;
     margin-top: 30px;
     padding: 10%;
-    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(127, 176, 224, 0.35);
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Semi-transparent white shadow */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(2px);
 }
 
 #phrase {
     font-size: 24px;
-    color: #fff; /* Set phrase text color to white */
+    color: #fff;
+    margin: 0;
 }
 
+/* Browse button */
+#browse-btn {
+    margin-top: 28px;
+    padding: 12px 22px;
+    font-size: 15px;
+    font-family: inherit;
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid var(--blueprint-blue-bright);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#browse-btn:hover,
+#browse-btn:focus-visible {
+    background-color: var(--blueprint-blue);
+    color: #fff;
+}
+
+#browse-btn:focus-visible {
+    outline: 2px solid var(--blueprint-blue-bright);
+    outline-offset: 3px;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 24px;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 560px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #10151c;
+    border: 1px solid rgba(127, 176, 224, 0.3);
+    border-radius: 6px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+#close-modal {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+#close-modal:hover,
+#close-modal:focus-visible {
+    color: var(--blueprint-blue-bright);
+}
+
+#phrase-list {
+    margin: 0;
+    padding: 8px 0;
+    overflow-y: auto;
+    list-style: none;
+}
+
+#phrase-list li {
+    padding: 12px 20px;
+    text-align: left;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+#phrase-list li:hover,
+#phrase-list li:focus-visible {
+    background-color: rgba(74, 127, 181, 0.25);
+    color: #fff;
+}
+
+#phrase-list li.current {
+    color: var(--blueprint-blue-bright);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bg-layer {
+        transition: none;
+    }
+}
